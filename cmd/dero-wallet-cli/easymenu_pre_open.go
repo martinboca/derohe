@@ -16,31 +16,32 @@
 
 package main
 
-import "io"
-import "fmt"
-import "time"
-import "strconv"
-import "strings"
-import "encoding/hex"
+import (
+	"encoding/hex"
+	"fmt"
+	"io"
+	"strconv"
+	"strings"
+	"time"
 
-import "github.com/chzyer/readline"
-
-import "github.com/deroproject/derohe/cryptography/crypto"
-import "github.com/deroproject/derohe/config"
-import "github.com/deroproject/derohe/globals"
-import "github.com/deroproject/derohe/walletapi"
-import "github.com/deroproject/derohe/walletapi/rpcserver"
+	"github.com/chzyer/readline"
+	"github.com/deroproject/derohe/config"
+	"github.com/deroproject/derohe/cryptography/crypto"
+	"github.com/deroproject/derohe/globals"
+	"github.com/deroproject/derohe/walletapi"
+	"github.com/deroproject/derohe/walletapi/rpcserver"
+)
 
 // display menu before a wallet is opened
 func display_easymenu_pre_open_command(l *readline.Instance) {
 	w := l.Stderr()
 	io.WriteString(w, "Menu:\n")
-	io.WriteString(w, "\t\033[1m1\033[0m\tOpen existing Wallet\n")
-	io.WriteString(w, "\t\033[1m2\033[0m\tCreate New Wallet\n")
-	io.WriteString(w, "\t\033[1m3\033[0m\tRecover Wallet using recovery seed (25 words)\n")
-	io.WriteString(w, "\t\033[1m4\033[0m\tRecover Wallet using recovery key (64 char private spend key hex)\n")
+	io.WriteString(w, "\t\033[1m1\033[0m\tOpen existing wallet\n")
+	io.WriteString(w, "\t\033[1m2\033[0m\tCreate new wallet\n")
+	io.WriteString(w, "\t\033[1m3\033[0m\tRecover wallet using recovery seed (25 words)\n")
+	io.WriteString(w, "\t\033[1m4\033[0m\tRecover wallet using recovery key (64 char private spend key hex)\n")
 	io.WriteString(w, "\n\t\033[1m9\033[0m\tExit menu and start prompt\n")
-	io.WriteString(w, "\t\033[1m0\033[0m\tExit Wallet\n")
+	io.WriteString(w, "\t\033[1m0\033[0m\tExit wallet\n")
 }
 
 // handle all commands
