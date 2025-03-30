@@ -52,7 +52,7 @@ func display_easymenu_post_open_command(l *readline.Instance) {
 		io.WriteString(w, "\n")
 	} else { // hide some commands, if view only wallet
 		io.WriteString(w, "\t\033[1m4\033[0m\tDisplay wallet pool\n")
-		io.WriteString(w, "\t\033[1m5\033[0m\tTransfer (send  DERO) to Another Wallet\n")
+		io.WriteString(w, "\t\033[1m5\033[0m\tTransfer (send DERO) to Another Wallet\n")
 		io.WriteString(w, "\t\033[1m6\033[0m\tToken transfer to another wallet\n")
 		io.WriteString(w, "\n")
 	}
@@ -60,7 +60,7 @@ func display_easymenu_post_open_command(l *readline.Instance) {
 	io.WriteString(w, "\t\033[1m7\033[0m\tChange wallet password\n")
 	io.WriteString(w, "\t\033[1m8\033[0m\tClose Wallet\n")
 	if wallet.IsRegistered() {
-		io.WriteString(w, "\t\033[1m12\033[0m\tTransfer all balance (send  DERO) To Another Wallet\n")
+		io.WriteString(w, "\t\033[1m12\033[0m\tTransfer all balance (send DERO) To Another Wallet\n")
 		io.WriteString(w, "\t\033[1m13\033[0m\tShow transaction history\n")
 		io.WriteString(w, "\t\033[1m14\033[0m\tRescan transaction history\n")
 		io.WriteString(w, "\t\033[1m15\033[0m\tExport all transaction history in json format\n")
